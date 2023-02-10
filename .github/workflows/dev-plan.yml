@@ -46,12 +46,12 @@ jobs:
       run: | 
         terraform init -input=false \
         -backend-config="resourse_group_name=demorg" \
-        -backend-config="storage_account_name=appstoreinfun"
-        -backend-config="container_name=gacttfstore"
-        -backend-config="key=terraformrg.tfstate"
-        -backend-config=client_secret="$ARM_CLIENT_SECRET"
-        -backend-config=client_id="$ARM_CLIENT_ID"
-        -backend-config=tenant_id="$ARM_TENANT_ID"
+        -backend-config="storage_account_name=appstoreinfun" \
+        -backend-config="container_name=gacttfstore" \
+        -backend-config="key=terraformrg.tfstate" \
+        -backend-config=client_secret="$ARM_CLIENT_SECRET" \
+        -backend-config=client_id="$ARM_CLIENT_ID" \
+        -backend-config=tenant_id="$ARM_TENANT_ID" \
         -backend-config=subscription_id="$ARM_SUBSCRIPTION_ID"
        
 
