@@ -5,7 +5,6 @@ terraform {
     container_name       = "gacttfstore"
     key                  = "prod.terraform.tfstate"
   }
-terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
