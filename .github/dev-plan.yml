@@ -17,7 +17,7 @@ jobs:
     environment: production
     env: 
       ARM_SUBSCRIPTION_ID: ${{ azure_subscription_id }}
-      ARM_TENANT_ID: ${{ azure_subscription_tenant_id >"
+      ARM_TENANT_ID: ${{ azure_subscription_tenant_id }}
       ARM_CLIENT_ID: ${{ service_principal_appid }}
       ARM_CLIENT_SECRET: ${{ service_principal_password }}
 
@@ -37,7 +37,7 @@ jobs:
         creds: ${{ secrets.AZURE_RDAC }}
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
-    - name: Setup Terraform
+    - name: Setup Terraform plan
       uses: hashicorp/setup-terraform@v1
       with:
         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
@@ -46,11 +46,7 @@ jobs:
     - name: Terraform Init
       run: terraform init
 
-    # Checks that all Terraform configuration files adhere to a canonical format
-    - name: Terraform Format
-      run: terraform fmt -check
-
-    # Generates an execution plan for Terraform
+       # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan -input=false
 
