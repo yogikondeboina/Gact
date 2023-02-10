@@ -3,7 +3,7 @@ terraform {
     resource_group_name  = "demorg"
     storage_account_name = "appstoreinfun"
     container_name       = "gacttfstore"
-    key                  = "prod.terraform.tfstate"
+    key                  = "terraform.tfstate"
   }
   required_providers {
     azurerm = {
