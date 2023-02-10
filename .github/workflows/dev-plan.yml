@@ -50,10 +50,10 @@ jobs:
          -backend-config="storage_account_name=appstoreinfun" \
          -backend-config="container_name=gacttfstore" \
          -backend-config="key=terraformrg.tfstate" \
-         -backend-config=client_secret="$ARM_CLIENT_SECRET" \
-         -backend-config=client_id="$ARM_CLIENT_ID" \
-         -backend-config=tenant_id="$ARM_TENANT_ID" \
-         -backend-config=subscription_id="$ARM_SUBSCRIPTION_ID"
+         -backend-config=client_secret="DV88Q~cYesBNZR~YSL0k4LLxY6i2SAokjluf~dbn" \
+         -backend-config=client_id="6b35eae6-1065-4a6f-b59e-356d9dd42d2e" \
+         -backend-config=tenant_id="90b59039-d7b6-4056-bd4a-0c8614d852a8" \
+         -backend-config=subscription_id="8cd9cb10-8a19-44a1-a5b7-3290ef2b3a24"
        
 
        # Generates an execution plan for Terraform
