@@ -38,16 +38,21 @@ jobs:
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform plan
-      uses: hashicorp/setup-terraform@v1
+      uses: hashicorp/setup-terraform@v2
       with:
-        cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+        terraform_version: 1.3.4
 
-    # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
-    - name: Terraform Init
-      run: terraform init
+    - name: Terraform Init azurem backend
+      run: | 
+        terraform init -input=false \
+        -backend-config="resourse_group_name=demorg" \
+        -backend-config="storage_account_name=appstoreinfun"
+        -backend-config="container_name=gacttfstore"
+        -backend-config="key=terraformrg.tfstate"
+       
 
        # Generates an execution plan for Terraform
     - name: Terraform Plan
-      run: terraform plan -input=false
+      run: terraform plan -out=plan.tfplan -input=false -var-file="env/dev.tfvars"
 
  
