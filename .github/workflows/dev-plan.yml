@@ -45,7 +45,7 @@ jobs:
     - name: Terraform Init azurem backend
       run: | 
         terraform init -input=false \
-        -backend-config="resourse_group_name=demorg" \
+        -backend-config="resource_group_name=demorg" \
         -backend-config="storage_account_name=appstoreinfun" \
         -backend-config="container_name=gacttfstore" \
         -backend-config="key=terraformrg.tfstate" \
